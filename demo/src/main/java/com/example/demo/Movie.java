@@ -51,7 +51,7 @@ public class Movie {
     private double gross;
     @JsonProperty("Gross")
     public double getGross() { return gross; }
-    @JsonProperty("Gross")
+    @JsonProperty("gross")
     public void setGross(double gross) { this.gross = gross; }
 
     private int year;

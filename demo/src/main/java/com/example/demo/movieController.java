@@ -3,6 +3,7 @@ package com.example.demo;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -70,10 +71,13 @@ public class movieController {
         return movie;
     }
 
-    //still working this
+
     @PostMapping("/gross/total")
-    public Map<String,Double> getTotalGross(@RequestBody() Array movies) {
+    public Map<String,Double> getTotalGross(@RequestBody() Movie[] movies) {
         double total = 0;
+
+        //Add both Movies objects in the array
+        total = movies[0].getGross() + movies[1].getGross();
 
         Map<String, Double> result = new HashMap<>();
         result.put("result", total);
